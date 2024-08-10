@@ -86,7 +86,7 @@ const CheckOutDetails = () => {
       return
     }
 
-    const result = await axios.post('http://localhost:4000/api/user/order/checkout',{amount:cartTotal},config)
+    const result = await axios.post('https://ecommerce-backend-4-m3na.onrender.com/api/user/order/checkout',{amount:cartTotal},config)
     if(!result){
       alert("something went wrong")
       return 
@@ -110,7 +110,7 @@ const CheckOutDetails = () => {
               // razorpaySignature: response.razorpay_signature,
           };
 
-          const result = await axios.post("http://localhost:4000/api/user/order/paymentVerification", data,config);  
+          const result = await axios.post("https://ecommerce-backend-4-m3na.onrender.com/api/user/order/paymentVerification", data,config);  
 
             console.log(shippingInfo)
 
