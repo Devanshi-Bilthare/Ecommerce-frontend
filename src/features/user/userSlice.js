@@ -133,7 +133,8 @@ export const authSlice = createSlice({
             state.isSuccess = false
             state.user = null
             if(state.isError == true){
-                toast.error(action.error)
+                console.log(action)
+                toast.error(action.payload.response.data.message)
             }
         })
         .addCase(loginUser.pending,(state)=>{
