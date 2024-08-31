@@ -13,7 +13,7 @@ const WishListCard = ({product,removeProduct}) => {
         width="100%"
         alt=''
         className="w-full bg-white object-cover h-[310px] rounded-xl"
-        src={product?.images[0]?.url}
+        src={product?.images}
       />
       <RxCross2 onClick={()=> removeProduct(product._id)} className='absolute top-5 right-5 z-10 text-2xl' />
     </CardBody>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, CardBody, CardFooter, Image } from '@nextui-org/react'
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { IoIosGitCompare } from 'react-icons/io';
 import { IoEyeOutline } from 'react-icons/io5';
 import ProgressBar from '@ramonak/react-progress-bar';
@@ -12,6 +12,7 @@ import { addToCart } from '../features/user/userSlice';
 
 const ProductGridCard = ({product}) => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const addtowishlist = (id) => {
     dispatch(addToWishList(id))
   }
@@ -27,7 +28,7 @@ const ProductGridCard = ({product}) => {
   }
   return (
     <div>
-    <Card shadow="lg" isPressable className='bg-white w-[70vw] flex flex-row gap-5 card-hover p-4'>
+    <Card onClick={() => navigate(`/product/${product?._id}`)}  shadow="lg" isPressable className='bg-white w-[70vw] flex flex-row gap-5 card-hover p-4'>
     <CardBody className="overflow-visible p-0 relative">
       <Image
         shadow="lg"

@@ -30,7 +30,7 @@ const CartItem = ({cartData}) => {
   return (
     <div className='bg-white text-gray-500 flex justify-between items-center rounded-xl'>
                 <div className=' md:w-[40vw] px-5 py-2 flex items-center gap-10'>
-                    <img src={cartData?.productId?.images[0]?.url} alt="" className='w-20 hidden md:block' />
+                    <img src={cartData?.productId?.images} alt="" className='w-20 hidden md:block' />
                     <div>
                         <h2>{cartData?.productId?.title}</h2>
                         <p>Size: S</p>

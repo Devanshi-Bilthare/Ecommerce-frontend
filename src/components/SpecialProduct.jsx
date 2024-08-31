@@ -23,7 +23,7 @@ const SpecialProduct = ({product}) => {
         width="100%"
         alt=''
         className="w-full object-cover h-[220px] rounded-xl"
-        src={product?.images[0]?.url}
+        src={product?.images}
       />
 
         <div className='mt-2 flex gap-2 justify-between w-full'>
@@ -32,14 +32,14 @@ const SpecialProduct = ({product}) => {
             radius="lg"
             alt=''
             className="w-full object-cover h-[150px] md:w-[7vw] rounded-md"
-            src={product?.images[0]?.url}
+            src={product?.images}
             />
             <Image
             shadow="lg"
             radius="lg"
             alt=''
             className="w-full object-cover h-[150px] md:w-[7vw] rounded-md"
-            src={product?.images[0]?.url}
+            src={product?.images}
             />
         </div>
 

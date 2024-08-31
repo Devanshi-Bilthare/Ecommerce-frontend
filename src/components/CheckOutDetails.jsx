@@ -237,8 +237,8 @@ const CheckOutDetails = () => {
 
           <div className='flex justify-between md:items-center mt-10 flex-col md:flex-row gap-5 md:gap-0 items-start'>
             <Link to='/cart' className='flex gap-2 items-center text-xl'> <MdOutlineArrowBackIos /> Return To Cart </Link>
-            <Link to='' className='uppercase hover:bg-amber-500 bg-[#232F3E] text-white px-7 py-4 rounded-[30px]'>Continue To Shiping</Link>
-            <button type='submit'>Buy Now</button>
+            {/* <Link to='' className='uppercase hover:bg-amber-500 bg-[#232F3E] text-white px-7 py-4 rounded-[30px]'>Continue To Shiping</Link> */}
+            <button className='uppercase hover:bg-amber-500 bg-[#232F3E] text-white px-7 py-4 rounded-[30px]' type='submit'>Buy Now</button>
           </div>
         </form>
     </div>

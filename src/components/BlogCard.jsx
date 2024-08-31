@@ -14,7 +14,7 @@ const BlogCard = ({blogData}) => {
               width="100%"
               alt=''
               className="w-full object-cover h-[200px] rounded-xl"
-              src={blogData?.images[0]?.url}
+              src={blogData?.images}
             />
           </CardBody>
             <small className="text-tiny uppercase ms-5">{moment(blogData?.createdAt).format("MMMM OD YYYY, h:mm a")}</small>

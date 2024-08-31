@@ -69,17 +69,6 @@ const OurStore = () => {
         <div className='w-full md:w-[20vw] p-4 bg-white rounded-xl flex flex-col gap-5'>
             <h2 className='font-semibold'>Filter By</h2>
             <div>
-            <p>Availablity</p>
-            <div className='flex justify-center items-center'>
-                <input type="checkbox" className='w-4 h-4'/>
-                <label htmlFor="" className='w-full p-2 text-gray-600'>In Stcok (1)</label>
-            </div>
-            <div className='flex justify-center items-center'>
-                <input type="checkbox" className='w-4 h-4' />
-                <label htmlFor="" className='w-full p-2 text-gray-600'>Out Of Stock (0)</label>
-            </div>    
-            </div>
-            <div>
                 <p>Price</p>
                 <div className='flex gap-2 mt-2'>
                     <input type="Number"

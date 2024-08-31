@@ -103,20 +103,21 @@ const Header = () => {
           </Link>
         </div>
       </header>
-      <header className='bg-[#232F3E] text-white px-4 py-2 md:px-[5%] md:py-4 uppercase flex gap-4 flex-col md:flex-row md:gap-10'>
-        <HeaderOptions />
+      <header className='bg-[#232F3E] text-white px-4 py-2 md:px-[5%] md:py-4 uppercase flex justify-between flex-col md:flex-row md:gap-10'>
+        {/* <HeaderOptions /> */}
+       
         <div className='flex justify-between items-center w-full md:w-[80%]'>
-          <div className='flex gap-4 md:gap-10 items-center'>
+          <div className='flex gap-4 md:gap-10 items-center md:text-xl text-[13px]'>
             <NavLink to='/'>Home</NavLink>
             <NavLink to='/store'>Our Store</NavLink>
             <NavLink to='/orders'>My Orders</NavLink>
             <NavLink to='/blog'>Blogs</NavLink>
             <NavLink to='/contact'>Contact</NavLink>
           </div>
-          {authState.user && (
-            <button onClick={handleLogOut} className='bg-white text-black px-4 py-1 rounded-md' type='button'>Log Out</button>
-          )}
         </div>
+        {authState.user && (
+            <button onClick={handleLogOut} className='bg-white text-black px-4 py-1 rounded-md md:mt-0 mt-4' type='button'>Log Out</button>
+          )}
       </header>
     </>
   );

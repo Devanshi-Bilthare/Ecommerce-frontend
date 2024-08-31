@@ -30,7 +30,7 @@ const SingleBlog = () => {
               width="100%"
               alt=''
               className="w-full object-cover h-[500px] mt-5 rounded-xl"
-              src={blogState?.images[0]?.url}
+              src={blogState?.images}
             />
             <p className='my-5 text-md text-gray-400' dangerouslySetInnerHTML={{__html:blogState?.description}}></p>
             <p><span>{moment(blogState?.createdAt).format("MMMM OD YYYY, h:mm a")}</span> <span>Kajal Rajpoot</span></p>

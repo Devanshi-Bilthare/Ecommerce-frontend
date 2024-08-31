@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, CardBody, CardFooter, Image } from '@nextui-org/react'
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { IoIosGitCompare } from 'react-icons/io';
 import { IoEyeOutline } from 'react-icons/io5';
 import Ratings from './Ratings';
@@ -11,6 +11,7 @@ import { addToCart } from '../features/user/userSlice';
 
 const ProductCard = ({product}) => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const addtowishlist = (id) => {
     dispatch(addToWishList(id))
   }
@@ -24,8 +25,10 @@ const ProductCard = ({product}) => {
     }
     dispatch(addToCart(cartData))
   }
+
+
   return (
-    <Card shadow="lg" isPressable className='bg-white w-full md:w-[20vw] gap-5 relative card-hover'>
+    <Card onClick={() => navigate(`/product/${product?._id}`)} shadow="lg" isPressable className='bg-white w-full md:w-[20vw] gap-5 relative card-hover'>
      <CardBody className="overflow-visible p-0">
        <Image
        isZoomed

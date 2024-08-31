@@ -18,6 +18,7 @@ const SingleProductPage = () => {
   const [quantity,setQuantity] = useState(1)
   const [inCart,setInCart] = useState(false)
   const [totalRating,setTotaRating] = useState(0)
+  const [isActive, setIsActive] = useState(false);
   const dispatch = useDispatch()
   const params = useParams()
   const navigate = useNavigate()
@@ -34,6 +35,7 @@ const SingleProductPage = () => {
 
   const addtowishlist = () => {
     dispatch(addToWishList(params.id))
+    setIsActive(!isActive)
   }
 
   useEffect(()=>{
@@ -51,11 +53,11 @@ const SingleProductPage = () => {
       price:singleProduct.price,
       color:color
     }
-    if(color == null) {toast.error("Please choose color")}
-    else{
+    // if(color == null) {toast.error("Please choose color")}
+    // else{
       dispatch(addToCart(cartData))
       navigate('/cart')
-    }
+    // }
   }
 
     const copyToClipboard = (text) => {
@@ -188,13 +190,13 @@ const SingleProductPage = () => {
             </div>
             <div className="mt-5 flex gap-5 items-center text-black mt-12">
                 <div className="flex gap-2 items-center">
-                    <CiHeart className="text-2xl" onClick={()=> addtowishlist()}/>
-                    <p className="capitalize">Add To Wishlist</p>
+                    <CiHeart className={`text-2xl ${isActive? 'text-red-400' : ''}`} onClick={()=> addtowishlist()}/>
+                    <p className="capitalize">{isActive ? 'Remove from wishlist':'Add To Wishlist'}</p>
                 </div>
-                <div className="flex gap-2 items-center">
+                {/* <div className="flex gap-2 items-center">
                     <IoIosGitCompare className="text-2xl"/>
                     <p className="capitalize">Add to compare</p>
-                </div>
+                </div> */}
                 
             </div>
             <p className="my-6"> <span className="text-black font-medium">Shiping & Returns : &nbsp; </span>Free shiping and returns are available on all orders we ship all US Domestic orders with in <span className="text-black">5-10 business days!</span></p>
@@ -210,7 +212,7 @@ const SingleProductPage = () => {
         <p className="w-full bg-white p-5 text-gray-400" dangerouslySetInnerHTML={{__html:singleProduct?.description}}>
            
         </p>
-        <h2 className="mt-10 mb-5 font-bold text-xl" id="review">Reviews</h2>
+        {/* <h2 className="mt-10 mb-5 font-bold text-xl" id="review">Reviews</h2>
         <div className="w-full bg-white p-5 text-gray-400">
             <p id="review">Customer Reviews</p>
             <div className="flex items-center gap-2"><Ratings rat={totalRating}/> <p>Based on {singleProduct?.ratings?.length} review</p></div>
@@ -240,8 +242,8 @@ const SingleProductPage = () => {
            { singleProduct?.ratings.map((items,idx)=>{
             return  <div className="border-t py-3">
             <Ratings rat={items.star}/>
-            {/* <h2 className="text-black font-semibold">Good</h2> */}
-            {/* <p className="text-black font-semibold">User <span className="text-gray-400 font-light">on</span> Aug 29, 2021</p> */}
+            <h2 className="text-black font-semibold">Good</h2>
+            <p className="text-black font-semibold">User <span className="text-gray-400 font-light">on</span> Aug 29, 2021</p>
             <p className="mt-5 capitalize">{items.comment}</p>
             <p  className="text-end underline">Report InAppropriate</p>
         </div>
@@ -253,7 +255,7 @@ const SingleProductPage = () => {
                 <h2 className="text-black">-Digitic</h2>
                 <p>Thank You For Your Purchase. Please let us know if we can do anything else for you.</p>
             </div>
-        </div>
+        </div> */}
        
       </div>
       
