@@ -35,7 +35,7 @@ const ProductGridCard = ({product}) => {
         width="100%"
         alt=''
         className="w-full object-cover h-[220px] rounded-xl"
-        src={product?.images[0]?.url}
+        src={product?.images}
       />
 
     <CiHeart  onClick={()=> addtowishlist(product?._id)} className='absolute top-5 right-5 z-10 text-xl'/>

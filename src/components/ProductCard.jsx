@@ -34,7 +34,7 @@ const ProductCard = ({product}) => {
          width="100%"
          alt=''
          className="w-full object-cover h-[200px] rounded-xl"
-         src={product?.images[0]?.url}
+         src={product?.images}
        />
      </CardBody>
        <small className="text-tiny uppercase ms-5 text-amber-800">{product?.brand}</small>

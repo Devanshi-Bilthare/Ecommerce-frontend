@@ -101,7 +101,7 @@ const SingleProductPage = () => {
               width="100%"
               alt=""
               className="w-full object-contain md:h-[70vh]  rounded-xl border"
-              src={singleProduct?.images[0]?.url}
+              src={singleProduct?.images}
             />
 
             <div className="mt-2 flex gap-2 justify-between w-full">
@@ -110,14 +110,14 @@ const SingleProductPage = () => {
                 radius="lg"
                 alt=""
                 className="object-cover rounded-md border"
-                src={singleProduct?.images[0]?.url}
+                src={singleProduct?.images}
               />
               <Image
                 shadow="lg"
                 radius="lg"
                 alt=""
                 className="object-cover rounded-md border"
-                src={singleProduct?.images[0]?.url}
+                src={singleProduct?.images}
               />
             </div>  
             <div className="mt-2 flex gap-2 justify-between w-full">
@@ -126,14 +126,14 @@ const SingleProductPage = () => {
                 radius="lg"
                 alt=""
                 className="object-cover rounded-md border"
-                src={singleProduct?.images[0]?.url}
+                src={singleProduct?.images}
               />
               <Image
                 shadow="lg"
                 radius="lg"
                 alt=""
                 className="object-cover rounded-md border"
-                src={singleProduct?.images[0]?.url}
+                src={singleProduct?.images}
               />
             </div>           
           </CardBody>
